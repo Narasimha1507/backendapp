@@ -1,9 +1,9 @@
 const express = require("express")
 const mongoose = require("mongoose")
 const cors = require("cors")
-require('dotenv').config();
+// require('dotenv').config();
 
-const dburl = process.env.mongodburl
+const dburl = "mongodb+srv://admin:admin@cluster0.wahxsuz.mongodb.net/artgallery?retryWrites=true&w=majority"
 mongoose.connect(dburl).then(() => {
     console.log("Connected to DataBase Successfully")
 }).catch((err) => {
@@ -21,7 +21,7 @@ app.use("",adminrouter)
 app.use("",customerrouter)
 app.use("",sellerrouter)
 
-const port = process.env.PORT
+const port = 2563
 app.listen(port,()=>{
     console.log(`Server is running at port ${port}`)
 })
